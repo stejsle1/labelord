@@ -16,9 +16,20 @@ import hashlib
 
 from labelord.setupfile import setup
 
-class LabelordWeb(flask.Flask):
+class LabelordWeb(flask.Flask): 
+   """
+   Flask web interface class
+   """
 
-   def __init__(self, *args, **kwargs):
+   def __init__(self, *args, **kwargs): 
+      """
+      Constructor
+      
+      :param: ``self`` Context
+      :param: ``*args`` Arguments 
+      :param: ``**kwargs`` Arguments
+      :return: ``None``
+      """
       super().__init__(*args, **kwargs)
         # You can do something here, but you don't have to...
         # Adding more args before *args is also possible
@@ -28,7 +39,14 @@ class LabelordWeb(flask.Flask):
         # @see http://flask.pocoo.org/docs/0.12/api/
         # @see https://github.com/pallets/flask
 
-   def inject_session(self, session):
+   def inject_session(self, session):  
+        """
+        Session setting.
+              
+        :param: ``self`` Context
+        :param: ``session`` Session for comunication with GitHub 
+        :return: ``None``
+        """
         # TODO: inject session for communication with GitHub
         # The tests will call this method to pass the testing session.
         # Always use session from this call (it will be called before
@@ -36,7 +54,15 @@ class LabelordWeb(flask.Flask):
         # session.
         self.session = session
 
-   def reload_config(self):
+   def reload_config(self): 
+        """
+        Config setting.
+        
+        Open config file and set congiguration (token, webhook secret, ...), set a self context.
+              
+        :param: ``self`` Context
+        :return: ``None``
+        """
         # TODO: check envvar LABELORD_CONFIG and reload the config
         # Because there are problems with reimporting the app with
         # different configuration, this method will be called in
@@ -97,11 +123,23 @@ app = LabelordWeb(__name__)
 
 @app.template_filter('link')
 def convert_time(text):
-    """Convert the repo name to link"""
+    """
+    Convert the repo name to link, assistant function for GET requests.    
+          
+    :param: ``text`` String - repository name - to convert
+    :return: ``Link``
+    """
     return 'https://github.com/' + text
 
 @app.route('/', methods=['GET'])
-def get():
+def get():         
+   """
+   GET requests
+   
+   Handle GET requests - print repositories and link to repositories.
+         
+   :return: ``render template`` Rendering page
+   """
    if not current_app.session:
       session = requests.Session()
       current_app.inject_session(session)
@@ -110,7 +148,14 @@ def get():
    return render_template('get.html', repos=current_app.repos)
    
 @app.route('/', methods=['POST'])
-def post():
+def post():      
+   """
+   POST requests   
+   
+   Handle POST requests - chech if request from GitHub, if do make command according to POST request and send response.
+         
+   :return: ``response``
+   """
    if not current_app.session:
       session = requests.Session()
       current_app.inject_session(session)

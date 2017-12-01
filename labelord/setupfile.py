@@ -7,6 +7,13 @@ import getpass
 import requests
 
 def setup(session, token):
+   """
+   Set session - set token into request header.
+   
+   :param: ``session`` Session for comunication with GitHub
+   :param: ``token``  Set token to header Authentization
+   :return: ``session``
+   """
    session.headers = {'User-Agent': 'Python'}
    def token_auth(req):
       req.headers['Authorization'] = 'token ' + token
@@ -16,7 +23,16 @@ def setup(session, token):
    
    return session
    
-def printextra(level, text, label, err): 
+def printextra(level, text, label, err):  
+   """
+   Print output.
+   
+   :param: ``level`` Indicator of quiet/verbose/normal mode
+   :param: ``text`` String to print out
+   :param: ``label`` Label name
+   :param: ``err`` Flag, if error occurs or dry-run
+   :return: ``None``
+   """ 
    if level == 0:
       return
    if level == 1:

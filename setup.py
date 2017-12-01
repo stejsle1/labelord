@@ -1,14 +1,14 @@
 from setuptools import setup, find_packages
 
 
-with open('README') as f:
+with open('README.rst') as f:
     long_description = ''.join(f.readlines())
 
 
 setup(
    name='labelord_stejsle1',
-   version='0.3',
-   keywords='github repositories labels ',
+   version='0.5',
+   keywords='github repositories labels documentation test issue',
    description='Python command-line application for label handle on GitHub',
    long_description=long_description,
    author='Lenka Stejskalova',
@@ -18,7 +18,8 @@ setup(
    install_requires=[
         'Flask', 
         'click>=6', 
-        'requests', 
+        'requests',
+        'sphinx', 
    ],
    classifiers=[
         'Framework :: Flask',
@@ -34,10 +35,10 @@ setup(
         ],
    zip_safe=False,
    packages=find_packages(),
-   package_data={'labelord_src': ['templates/*.html']},
+   package_data={'labelord': ['templates/*.html']},
    entry_points={
         'console_scripts': [
-            'labelord = labelord.labelord:main',
+            'labelord = labelord:main',
         ],
    },    
 )
