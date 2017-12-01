@@ -20,6 +20,7 @@ setup(
         'click>=6', 
         'requests',
         'sphinx', 
+        'sphinx_click',
    ],
    classifiers=[
         'Framework :: Flask',
@@ -35,7 +36,11 @@ setup(
         ],
    zip_safe=False,
    packages=find_packages(),
-   package_data={'labelord': ['templates/*.html']},
+   package_data={
+        'labelord': [
+            'templates/*.html',
+        ]
+    },
    entry_points={
         'console_scripts': [
             'labelord = labelord:main',

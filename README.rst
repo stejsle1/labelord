@@ -65,6 +65,10 @@ Documentation also contains tests. Tests can be checked be running command:
 .. code::
    
    make doctest  
+   
+Documentation is readable on Read the Docs:
+
+http://labelord-docs.readthedocs.io/en/latest/   
 
 
 License
