@@ -7,7 +7,7 @@ with open('README.rst') as f:
 
 setup(
    name='labelord_stejsle1',
-   version='0.5',
+   version='0.5.1',
    keywords='github repositories labels documentation test issue',
    description='Python command-line application for label handle on GitHub',
    long_description=long_description,
