@@ -1,7 +1,0 @@
-Labelord
-
-Labelord is command-line application with Flask web interface allowing manage labels from GitHub issues.
-
-License
-
-This project is licensed under the CCO License - see LICENSE file for more information.
