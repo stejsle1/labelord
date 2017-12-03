@@ -10,14 +10,14 @@ Documentation can test some **labelord** function to see how they works.
    
    import sys
    from labelord.setupfile import printextra
-   from labelord.web import convert_time
+   from labelord.web import convert_str_to_link
 
 
 For example it checks function *`convert_time(*string*)`' for printing link to GitHub repository:
 
 .. doctest::
 
-   >>> convert_time("stejsle1/lab01")
+   >>> convert_str_to_link("stejsle1/lab01")
    'https://github.com/stejsle1/lab01'
    
 More information about function *`convert_time(*string*)`' is in :ref:`api-label`
