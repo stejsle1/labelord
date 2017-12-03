@@ -19,6 +19,7 @@ setup(
         'Flask', 
         'click>=6', 
         'requests',
+        'pytest',
    ],
    classifiers=[
         'Framework :: Flask',
