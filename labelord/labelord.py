@@ -16,7 +16,7 @@ import hashlib
 
     
 from labelord.setupfile import setup, printextra
-from labelord.web import convert_time, LabelordWeb, get, post
+from labelord.web import convert_str_to_link, LabelordWeb, get, post
 
 # Structure your implementation as you want (OOP, FP, ...)
 # Try to make it DRY also for your own good

@@ -7,7 +7,7 @@ with open('README.rst') as f:
 
 setup(
    name='labelord_stejsle1',
-   version='0.5.1',
+   version='0.5.2',
    keywords='github repositories labels documentation test issue',
    description='Python command-line application for label handle on GitHub',
    long_description=long_description,
@@ -19,8 +19,6 @@ setup(
         'Flask', 
         'click>=6', 
         'requests',
-        'sphinx', 
-        'sphinx_click',
    ],
    classifiers=[
         'Framework :: Flask',

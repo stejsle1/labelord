@@ -51,14 +51,20 @@ For running commands type:
 Documentation
 -------------
 
-Documentation is save in ``docs`` folder in module. To set documentation into HTML format run:
+Documentation is save in ``docs`` folder in module. Before running command to make documentation run command to install all required packages:
+
+.. code::
+
+   python -m pip install -r docs/requirements.txt
+
+To set documentation into HTML format run:
 
 .. code::
    
    cd docs
    make html
    
-Now in ``docs`` folder is placed file ``'index.html'`` with documentation.   
+Now in ``docs/_build/html/`` folders is placed file ``'index.html'`` with documentation.   
 
 Documentation also contains tests. Tests can be checked be running command:
 
