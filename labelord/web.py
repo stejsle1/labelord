@@ -122,7 +122,7 @@ app = LabelordWeb(__name__)
 # hint: you can use flask.current_app (inside app context)
 
 @app.template_filter('link')
-def convert_time(text):
+def convert_str_to_link(text):
     """
     Convert the repo name to link, assistant function for GET requests.    
           
